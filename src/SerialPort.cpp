@@ -66,6 +66,10 @@ namespace qmlserialport {
         serialPort.open(QIODevice::ReadWrite);
     }
 
+    void SerialPort::close(){
+        serialPort.close();
+    }
+
     void SerialPort::sendData(QString data){
         serialPort.write(data.toUtf8());
     }

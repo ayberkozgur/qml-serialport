@@ -2,7 +2,6 @@ TEMPLATE = lib
 TARGET = qmlserialportplugin
 
 CONFIG += qt plugin c++11
-CONFIG -= android_install
 
 QT += qml quick serialport
 
@@ -12,6 +11,11 @@ unix{
 
     QMAKE_CXXFLAGS += -O3
     QMAKE_CXXFLAGS_RELEASE += -O3
+}
+
+win32 {
+    QMAKE_CXXFLAGS += /std:c++14
+    QMAKE_CXXFLAGS_RELEASE += /std:c++14
 }
 
 TARGET = $$qtLibraryTarget($$TARGET)
